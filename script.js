@@ -106,7 +106,7 @@ spread:180
 
 });
 
-const end = Date.now() + 5000;
+const end = Date.now() + 30000;
 
 const fireworks = setInterval(() => {
 
@@ -116,7 +116,7 @@ const fireworks = setInterval(() => {
     }
 
     confetti({
-        particleCount: 20,
+        particleCount: 30,
         angle: 60,
         spread: 70,
         origin: {x: 0}
