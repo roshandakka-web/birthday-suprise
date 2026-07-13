@@ -1,6 +1,6 @@
 const terminal = document.getElementById("terminal");
 
-const friend = "Fouziya 💜";
+const friend = "SHAIK FOUZIYA ";
 
 const lines = [
 "💜 BTS ARMY DATABASE v2026",
