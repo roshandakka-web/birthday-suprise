@@ -92,3 +92,19 @@ body{
     transform:scale(1.08);
     background:#d16cff;
 }
+#musicBtn{
+    margin-top:15px;
+    padding:16px 34px;
+    font-size:18px;
+    border:none;
+    border-radius:40px;
+    background:#6f42c1;
+    color:white;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#musicBtn:hover{
+    transform:scale(1.08);
+    background:#8d5cff;
+}
