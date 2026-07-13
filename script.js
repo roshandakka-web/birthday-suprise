@@ -106,6 +106,31 @@ spread:180
 
 });
 
+const end = Date.now() + 5000;
+
+const fireworks = setInterval(() => {
+
+    if (Date.now() > end) {
+        clearInterval(fireworks);
+        return;
+    }
+
+    confetti({
+        particleCount: 20,
+        angle: 60,
+        spread: 70,
+        origin: {x: 0}
+    });
+
+    confetti({
+        particleCount: 20,
+        angle: 120,
+        spread: 70,
+        origin: {x: 1}
+    });
+
+}, 250);
+
 
 giftBtn.onclick=()=>{
 
