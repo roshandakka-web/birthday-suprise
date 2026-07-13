@@ -1,176 +1,93 @@
-const terminal = document.getElementById("terminal");
+const title = document.getElementById("title");
+const cake = document.getElementById("cake");
+const letter = document.getElementById("letter");
+const giftBtn = document.getElementById("giftBtn");
 
-const friend = "SHAIK FOUZIYA ";
+const message = `Dear Fouziya 💜,
 
-const lines = [
-"💜 BTS ARMY DATABASE v2026",
-"",
-"🔒 Connecting to HYBE Secure Server...",
-"",
-"████████████████████ 100%",
-"",
-"🌌 Searching ARMY Members...",
-"",
-"████████████████████ 100%",
-"",
-"🔍 Looking for today's birthday...",
-"",
-"████████████████████ 100%",
-"",
-"💜 TARGET FOUND!",
-"",
-"👤 Name : " + friend,
-"💜 ARMY Status : VERIFIED",
-"🎂 Birthday : TODAY",
-"",
-"📂 Loading Birthday Protocol...",
-"",
-"⚠️ Secret Message Incoming...",
-""
-];
+Happy Birthday!
 
-let i = 0;
+Today is all about celebrating you.
 
-function type() {
-    if (i < lines.length) {
-        terminal.innerHTML += lines[i] + "\n";
-        terminal.scrollTop = terminal.scrollHeight;
-        i++;
-        setTimeout(type, 600);
-    } else {
-        countdown();
-    }
-}
+May your smile always stay bright.
+May your dreams become reality.
+May every new day bring happiness,
+peace, success and beautiful memories.
 
-function countdown() {
-    let n = 3;
+Keep shining.
+Keep smiling.
+Keep believing in yourself.
 
-    const timer = setInterval(() => {
+💜 Borahae! 💜
 
-        terminal.innerHTML += "\n💜 Surprise in " + n + "...";
+Have the most amazing birthday! 🎂🎉`;
 
-        terminal.scrollTop = terminal.scrollHeight;
+giftBtn.style.display = "none";
 
-        n--;
+window.onload = () => {
 
-        if (n === 0) {
-            clearInterval(timer);
+    title.textContent = "💜 Happy Birthday Fouziya 💜";
 
-            setTimeout(showBirthday,1000);
+    cake.textContent = "🎂";
+
+    // Big celebration
+    confetti({
+        particleCount:250,
+        spread:180,
+        origin:{y:0.6}
+    });
+
+    // Fireworks for 5 seconds
+    const end = Date.now() + 5000;
+
+    const interval = setInterval(() => {
+
+        if (Date.now() > end) {
+            clearInterval(interval);
+            giftBtn.style.display = "inline-block";
+            return;
         }
 
-    },1000);
-}
+        confetti({
+            particleCount:15,
+            angle:60,
+            spread:60,
+            origin:{x:0}
+        });
 
-function showBirthday(){
+        confetti({
+            particleCount:15,
+            angle:120,
+            spread:60,
+            origin:{x:1}
+        });
 
-document.body.style.overflow="auto";
+    },250);
 
-terminal.innerHTML=`
+};
 
-terminal.style.textAlign = "center";
+giftBtn.onclick = () => {
 
-<div class="card center">
+    giftBtn.style.display = "none";
 
-<div class="title">
+    let i = 0;
 
-🎉 HAPPY BIRTHDAY 🎉
+    function typeLetter(){
 
-</div>
+        if(i < message.length){
 
-<h1 class="glow">${friend}</h1>
+            letter.innerHTML += message.charAt(i) === "\n"
+                ? "<br>"
+                : message.charAt(i);
 
-<div class="cake">🎂</div>
+            i++;
 
-<div class="message">
+            setTimeout(typeLetter,35);
 
-💜 Dear Fouziya,
+        }
 
-<br><br>
-
-Today is all about YOU!
-
-<br><br>
-
-May your smile shine brighter every day.
-
-<br>
-
-May happiness always find you.
-
-<br>
-
-May every dream become reality.
-
-<br>
-
-May this year bring countless beautiful memories.
-
-<br><br>
-
-💜 Keep shining.
-
-<br>
-
-💜 Keep smiling.
-
-<br>
-
-💜 Keep believing in yourself.
-
-<br><br>
-
-✨ May your life always sparkle like the stars.
-
-<br><br>
-
-💜 FROM BTS ARMY 💜
-
-<br><br>
-
-🎉 Happy Birthday once again! 🎉
-
-</div>
-
-</div>
-
-`;
-
-window.scrollTo({
-top:document.body.scrollHeight,
-behavior:"smooth"
-});
-
-// Big confetti burst
-confetti({
-    particleCount:300,
-    spread:180,
-    origin:{y:0.6}
-});
-
-// Fireworks 🎆
-const duration = 5000;
-const animationEnd = Date.now() + duration;
-
-const interval = setInterval(() => {
-
-    if (Date.now() > animationEnd) {
-        clearInterval(interval);
-        return;
     }
 
-    confetti({
-        particleCount:35,
-        angle:60,
-        spread:55,
-        origin:{x:0}
-    });
+    typeLetter();
 
-    confetti({
-        particleCount:35,
-        angle:120,
-        spread:55,
-        origin:{x:1}
-    });
-
-},250);
+};
