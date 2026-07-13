@@ -111,7 +111,7 @@ giftBtn.onclick=()=>{
 
 giftBtn.style.display="none";
 
-let message=`Dear Fouziya 💜,
+let message=`Dear Fouziya ,
 
 Happy Birthday!
 
