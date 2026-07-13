@@ -139,12 +139,36 @@ top:document.body.scrollHeight,
 behavior:"smooth"
 });
 
+// Big confetti burst
 confetti({
-particleCount:300,
-spread:180,
-origin:{y:0.6}
+    particleCount:300,
+    spread:180,
+    origin:{y:0.6}
 });
 
-}
+// Fireworks 🎆
+const duration = 5000;
+const animationEnd = Date.now() + duration;
 
-type();
+const interval = setInterval(() => {
+
+    if (Date.now() > animationEnd) {
+        clearInterval(interval);
+        return;
+    }
+
+    confetti({
+        particleCount:35,
+        angle:60,
+        spread:55,
+        origin:{x:0}
+    });
+
+    confetti({
+        particleCount:35,
+        angle:120,
+        spread:55,
+        origin:{x:1}
+    });
+
+},250);
