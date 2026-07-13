@@ -1,154 +1,150 @@
 const terminal = document.getElementById("terminal");
 
-const friend = "Fouziya";
+const friend = "Fouziya 💜";
 
 const lines = [
-"🔒 Secure Government Birthday Database",
+"💜 BTS ARMY DATABASE v2026",
 "",
-"Initializing Protocol...",
+"🔒 Connecting to HYBE Secure Server...",
 "",
-"📡 Connecting to Global Network...",
 "████████████████████ 100%",
 "",
-"🌍 Scanning 8,000,000,000 Humans...",
+"🌌 Searching ARMY Members...",
+"",
 "████████████████████ 100%",
 "",
-"🔍 Searching Birthday Database...",
+"🔍 Looking for today's birthday...",
+"",
 "████████████████████ 100%",
 "",
-"🚨 ALERT!",
-"",
-"Suspicious Human Found!",
+"💜 TARGET FOUND!",
 "",
 "👤 Name : " + friend,
-"🎂 Birthday Status : TODAY",
-"😎 Coolness Level : MAXIMUM",
+"💜 ARMY Status : VERIFIED",
+"🎂 Birthday : TODAY",
 "",
-"Loading Criminal Record...",
+"📂 Loading Birthday Protocol...",
 "",
-"📄 Crime #1 : Being too awesome 😎",
-"📄 Crime #2 : Making everyone laugh 😂",
-"📄 Crime #3 : Eating too much cake 🎂",
-"",
-"⚖ Checking Verdict..."
+"⚠️ Secret Message Incoming...",
+""
 ];
 
-let index = 0;
+let i = 0;
 
-function typeLine() {
-
-    if (index < lines.length) {
-
-        terminal.innerHTML += lines[index] + "\n";
-
+function type() {
+    if (i < lines.length) {
+        terminal.innerHTML += lines[i] + "\n";
         terminal.scrollTop = terminal.scrollHeight;
-
-        index++;
-
-        setTimeout(typeLine, 700);
-
+        i++;
+        setTimeout(type, 600);
     } else {
-
         countdown();
-
     }
-
 }
 
 function countdown() {
-
     let n = 3;
 
     const timer = setInterval(() => {
 
-        terminal.innerHTML += "\n🚀 Launching Surprise in " + n + "...";
+        terminal.innerHTML += "\n💜 Surprise in " + n + "...";
 
         terminal.scrollTop = terminal.scrollHeight;
 
         n--;
 
         if (n === 0) {
-
             clearInterval(timer);
 
             setTimeout(showBirthday,1000);
-
         }
 
     },1000);
-
 }
 
 function showBirthday(){
 
-document.body.style.background="#111";
+document.body.style.overflow="auto";
 
 terminal.innerHTML=`
 
-<div class="center">
+<div class="card center">
 
-<div class="big">
+<div class="title">
 
 🎉 HAPPY BIRTHDAY 🎉
 
-<br><br>
-
-${friend}
-
 </div>
 
-<br>
+<h1 class="glow">${friend}</h1>
 
-🎂 Wishing you a day filled with happiness!
+<div class="cake">🎂</div>
 
-<br><br>
+<div class="message">
 
-✨ May all your dreams come true.
-
-<br>
-
-😂 Keep smiling and keep making everyone laugh.
-
-<br>
-
-🎁 Have an amazing birthday!
+💜 Dear Fouziya,
 
 <br><br>
 
-<pre>
-
-        i i i i
-
-      |:H:a:p:p:y:|
-
-    __|___________|__
-
-   |^^^^^^^^^^^^^^^^^|
-
-   |   BIRTHDAY!!!   |
-
-   |_________________|
-
-</pre>
-
-<br>
-
-❤️ Stay awesome, Fouziya!
+Today is all about YOU!
 
 <br><br>
 
-Made with ❤️ by Roshan 😎
+May your smile shine brighter every day.
+
+<br>
+
+May happiness always find you.
+
+<br>
+
+May every dream become reality.
+
+<br>
+
+May this year bring countless beautiful memories.
+
+<br><br>
+
+💜 Keep shining.
+
+<br>
+
+💜 Keep smiling.
+
+<br>
+
+💜 Keep believing in yourself.
+
+<br><br>
+
+✨ May your life always sparkle like the stars.
+
+<br><br>
+
+💜 FROM BTS ARMY 💜
+
+<br><br>
+
+🎉 Happy Birthday once again! 🎉
+
+</div>
 
 </div>
 
 `;
 
+window.scrollTo({
+top:document.body.scrollHeight,
+behavior:"smooth"
+});
+
 confetti({
-    particleCount:250,
-    spread:180,
-    origin:{y:0.6}
+particleCount:300,
+spread:180,
+origin:{y:0.6}
 });
 
 }
 
-typeLine();
+type();
