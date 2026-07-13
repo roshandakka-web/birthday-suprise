@@ -1,9 +1,117 @@
+const terminal = document.getElementById("terminal");
+const main = document.getElementById("main");
+
 const title = document.getElementById("title");
 const cake = document.getElementById("cake");
 const letter = document.getElementById("letter");
 const giftBtn = document.getElementById("giftBtn");
 
-const message = `Dear Fouziya 💜,
+
+const friend = "Fouziya 💜";
+
+
+const lines=[
+
+"💜 BTS ARMY DATABASE v2026",
+"",
+"🔒 Connecting to HYBE Secure Server...",
+"",
+"████████████████ 100%",
+"",
+"🌌 Searching ARMY Members...",
+"",
+"████████████████ 100%",
+"",
+"🔍 Finding birthday target...",
+"",
+"████████████████ 100%",
+"",
+"💜 TARGET FOUND!",
+"",
+"👤 Name : Fouziya 💜",
+"💜 ARMY Status : VERIFIED",
+"🎂 Birthday : TODAY",
+"",
+"📂 Loading Birthday Protocol...",
+"",
+"⚠️ Secret Message Incoming..."
+
+];
+
+
+let i=0;
+
+
+function type(){
+
+if(i<lines.length){
+
+terminal.innerHTML += lines[i]+"\n";
+
+i++;
+
+setTimeout(type,500);
+
+}
+
+else{
+
+countdown();
+
+}
+
+}
+
+
+
+function countdown(){
+
+let n=3;
+
+let timer=setInterval(()=>{
+
+terminal.innerHTML += "\n💜 Surprise in "+n+"...";
+
+n--;
+
+if(n===0){
+
+clearInterval(timer);
+
+setTimeout(showBirthday,1000);
+
+}
+
+},1000);
+
+}
+
+
+
+function showBirthday(){
+
+terminal.style.display="none";
+
+main.style.display="block";
+
+title.textContent="💜 HAPPY BIRTHDAY FOUZIYA 💜";
+
+cake.textContent="🎂";
+
+
+confetti({
+
+particleCount:300,
+spread:180
+
+});
+
+
+giftBtn.onclick=()=>{
+
+giftBtn.style.display="none";
+
+let message=`Dear Fouziya 💜,
 
 Happy Birthday!
 
@@ -11,83 +119,40 @@ Today is all about celebrating you.
 
 May your smile always stay bright.
 May your dreams become reality.
-May every new day bring happiness,
-peace, success and beautiful memories.
+May every day bring happiness,
+peace and beautiful memories.
 
 Keep shining.
 Keep smiling.
 Keep believing in yourself.
 
-FROM BTS ARMY
+FROM BTS ARMY 💜
 
 Have the most amazing birthday! 🎂🎉`;
 
-giftBtn.style.display = "none";
+let x=0;
 
-window.onload = () => {
 
-    title.textContent = "💜 Happy Birthday Fouziya 💜";
+function write(){
 
-    cake.textContent = "🎂";
+if(x<message.length){
 
-    // Big celebration
-    confetti({
-        particleCount:250,
-        spread:180,
-        origin:{y:0.6}
-    });
+letter.innerHTML += message[x]=="\n" ? "<br>" : message[x];
 
-    // Fireworks for 5 seconds
-    const end = Date.now() + 5000;
+x++;
 
-    const interval = setInterval(() => {
+setTimeout(write,35);
 
-        if (Date.now() > end) {
-            clearInterval(interval);
-            giftBtn.style.display = "inline-block";
-            return;
-        }
+}
 
-        confetti({
-            particleCount:15,
-            angle:60,
-            spread:60,
-            origin:{x:0}
-        });
+}
 
-        confetti({
-            particleCount:15,
-            angle:120,
-            spread:60,
-            origin:{x:1}
-        });
-
-    },250);
+write();
 
 };
 
-giftBtn.onclick = () => {
 
-    giftBtn.style.display = "none";
+}
 
-    let i = 0;
 
-    function typeLetter(){
-
-        if(i < message.length){
-
-            letter.innerHTML += message.charAt(i) === "\n"
-                ? "<br>"
-                : message.charAt(i);
-
-            i++;
-
-            setTimeout(typeLetter,35);
-
-        }
-
-    }
-
-    typeLetter();
-
-};
+type();
