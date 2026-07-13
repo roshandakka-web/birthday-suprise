@@ -5,47 +5,74 @@
 }
 
 body{
-    background:#000;
-    color:#00ff41;
-    font-family:Consolas, monospace;
-    overflow:auto;
+    font-family:Arial,Helvetica,sans-serif;
+    background:linear-gradient(180deg,#12001f,#220033,#3d0066);
+    color:white;
+    overflow:hidden;
 }
 
 #terminal{
-    padding:30px;
-    white-space:pre-wrap;
+    padding:40px;
+    font-family:Consolas,monospace;
     font-size:20px;
+    white-space:pre-wrap;
     line-height:1.8;
-    text-shadow:0 0 8px #00ff41;
+    height:100vh;
+    overflow-y:auto;
+    scroll-behavior:smooth;
 }
 
-.cursor{
-    animation:blink 0.8s infinite;
+#stars{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    background-image:
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(#d8b4ff 1px, transparent 1px);
+    background-size:60px 60px,120px 120px;
+    opacity:.35;
+    animation:twinkle 6s linear infinite;
 }
 
-@keyframes blink{
-    50%{
-        opacity:0;
-    }
+@keyframes twinkle{
+    0%{opacity:.25;}
+    50%{opacity:.45;}
+    100%{opacity:.25;}
 }
 
 .center{
     text-align:center;
 }
 
-.big{
-    font-size:45px;
-    font-weight:bold;
+.title{
+    font-size:52px;
+    color:#f3c4ff;
+    text-shadow:0 0 20px #d36cff;
+    margin-bottom:20px;
 }
 
-.red{
-    color:#ff4040;
+.card{
+    max-width:750px;
+    margin:40px auto;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.2);
+    border-radius:20px;
+    padding:30px;
+    backdrop-filter:blur(10px);
+    box-shadow:0 0 25px rgba(187,134,252,.4);
 }
 
-.green{
-    color:#00ff41;
+.message{
+    font-size:22px;
+    line-height:1.8;
 }
 
-.yellow{
-    color:#ffff00;
+.cake{
+    font-size:90px;
+    margin:25px 0;
+}
+
+.glow{
+    color:#ffd6ff;
+    text-shadow:0 0 18px #ff66ff;
 }
