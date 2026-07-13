@@ -68,6 +68,8 @@ document.body.style.overflow="auto";
 
 terminal.innerHTML=`
 
+terminal.style.textAlign = "center";
+
 <div class="card center">
 
 <div class="title">
