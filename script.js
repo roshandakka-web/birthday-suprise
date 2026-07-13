@@ -18,7 +18,7 @@ Keep shining.
 Keep smiling.
 Keep believing in yourself.
 
-💜 Borahae! 💜
+FROM BTS ARMY
 
 Have the most amazing birthday! 🎂🎉`;
 
