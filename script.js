@@ -7,7 +7,7 @@ const letter = document.getElementById("letter");
 const giftBtn = document.getElementById("giftBtn");
 
 
-const friend = "Fouziya 💜";
+const friend = "SHAIK FOUZIYA ";
 
 
 const lines=[
@@ -28,7 +28,7 @@ const lines=[
 "",
 "💜 TARGET FOUND!",
 "",
-"👤 Name : Fouziya 💜",
+"👤 Name : Fouziya ",
 "💜 ARMY Status : VERIFIED",
 "🎂 Birthday : TODAY",
 "",
@@ -94,7 +94,7 @@ terminal.style.display="none";
 
 main.style.display="block";
 
-title.textContent="💜 HAPPY BIRTHDAY FOUZIYA 💜";
+title.textContent="💜 HAPPY BIRTHDAY FOUZIYA SISTER 💜";
 
 cake.textContent="🎂";
 
